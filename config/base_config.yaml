@@ -1,0 +1,26 @@
+# 训练模式
+train:
+  hidden_size: 1024
+  learning_rate: 0.01
+  dropout_rate: 0.2
+  activation: 'relu'
+  reg: 0
+  lr_decay: 0.9
+  momentum: 0.9
+  early_stop_step: 100
+  data_augment: True
+
+
+# 测试模式
+test:
+  model_path: "./ckp/best_model.npz"
+
+# 网格搜索模式
+param_search:
+  hidden_size: [1024, 512, 256]
+  learning_rate: [0.01, 0.05]
+  batch_size: [200, 400]
+  reg: [0,0.01,0.1]
+  dropout_rate: [0.2,0]
+  early_stop_step: [50]
+
